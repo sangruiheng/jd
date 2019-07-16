@@ -9,3 +9,12 @@ ctrl + shift + i  vscode格式化
   images组件如果不设置高和宽  小程序会给其设置默认高和宽
 
   rpx 
+
+
+  组件只继承极少数的全局样式  如 font  color
+
+  点击事件 bind:tap="onLike"   catch:tap(会冒泡) 方法写在js的mothods中
+
+  组件分为外部属性和内部属性  外部属性一般定义在properties中  内部属性在data中
+
+  小程序生命周期函数
