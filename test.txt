@@ -18,3 +18,32 @@ ctrl + shift + i  vscode格式化
   组件分为外部属性和内部属性  外部属性一般定义在properties中  内部属性在data中
 
   小程序生命周期函数
+
+
+  es6之前回调函数中使用this需要在外部用that=this接受 传入内部   es6可以  =>(res){}  箭头函数传入
+  es6的模块导入导出  export  import(导入时只能使用相对路径)
+
+  回调函数
+     let latest = classic.getLatest((res)=>{
+          console.log(res)
+          this.setData({
+            classicData:res
+          })
+    });
+
+      getLatest(sCallback){
+        let a = ''
+        this.request({
+            url: 'classic/latest',
+            success: (res) => {
+                sCallback(res)
+            }
+          })
+    }
+
+
+    将组件需要的数据通过组件的属性传递到组件内部进行处理
+  
+    页面渲染流程    API->page页面的js(setData)->page页面(传入组件属性)->组件的js(setData)->组件页面
+
+    不光setData的数据页面可以读取  data中的也可以

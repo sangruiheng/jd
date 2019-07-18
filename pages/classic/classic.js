@@ -1,17 +1,29 @@
-// pages/classic/classic.js
+import {
+  ClassicModel
+} from '../../models/classic.js'
+let classic = new ClassicModel()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    test: 1,
+    classicData:null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
+    let latest = classic.getLatest((res)=>{
+          console.log(res)
+          this.setData({
+            classicData:res
+          })
+    });
 
   },
 
