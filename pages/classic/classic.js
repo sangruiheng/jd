@@ -18,7 +18,7 @@ Page({
    */
   onLoad: function (options) {
 
-    let latest = classic.getLatest((res)=>{
+    classic.getLatest((res)=>{
           console.log(res)
           this.setData({
             classicData:res

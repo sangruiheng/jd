@@ -1,5 +1,24 @@
 ctrl + shift + i  vscode格式化
 
+弹性盒子
+/* 如果几个元素是块状元素，但是如果放置在弹性盒子中，他们的块状元素特性就会消除 */
+/* 设置容器为弹性盒子 */
+.container{
+	display: flex;
+	/* 设置容器下的子项item的排布方向及排序  column row*/
+	flex-direction: row;
+	height: 400px;
+	background-color: #9999;
+	/* 主轴和交叉轴 */
+	/* 当flex-direction为那个方向时，那个方向就是主轴 */
+	/* 主轴 设置对齐方式 常用五种  start end center space-between space-around       reverse后相反*/
+	justify-content: center;
+	/* 交叉轴 设置对齐方式  start end center stretch(没有高度时 拉伸高度) baseline(每个元素里的文字底线对齐 按照第一个对齐)       reverse后相反*/	
+	/* align-items: flex-start; */
+	/* 设置换行  当设置的宽度大于屏幕宽度时flex会平均分配每个items宽度不会出现换行 */
+	/* flex-wrap: wrap; */
+}
+
 
 "usingComponents": {
     "like-cmp" : "components/like/index"   //在page中引入组件

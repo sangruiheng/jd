@@ -1,1 +1,8 @@
+<!-- <view class='container'>
+	<view class="chunk color1">1</view>
+	<view class="chunk color2">2</view>
+	<view class="chunk color3">3</view>
+</view>  -->
+
+
 <v-like like="{{classicData.like_status}}" count="{{classicData.fav_nums}}" />
