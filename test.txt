@@ -66,3 +66,29 @@ ctrl + shift + i  vscode格式化
     页面渲染流程    API->page页面的js(setData)->page页面(传入组件属性)->组件的js(setData)->组件页面
 
     不光setData的数据页面可以读取  data中的也可以
+
+
+     position: relative; 相对于本身进行偏移
+
+     激活自定义事件
+      //参数1 事件名 参数2 数据
+      this.triggerEvent('like',{
+        behavior:behavior
+      },{})
+
+
+      params.success && params.success(res.data);  //判断是否有值
+
+      attached  组件的声明周期函数
+
+      组件中 properties中和data中 不能有同名变量 否则会存在覆盖现象 (小程序解析时会合并properties和data)
+
+      组件中的properties中的 observer(当属性被修改时 触发) 可以对外部传进来的变量进行处理  把8 改为08
+      千万不要的在属性的observer中修改属性的值 否则会引起无线递归
+
+      编写自定义组件步骤 1.编写wxml骨架 2确定组件的内部属性和外部属性 3在骨架中进行数据绑定 4引用组件 5使用组件  6编写组件的样式 
+
+      flex 如果你认为一个元素是100%  那么就给宽度或者高度100%
+
+      组件的代码复用 通过behavior实现
+      behavior多继承 子Component下的会覆盖behavior的  生命周期函数不会覆盖 会以此执行

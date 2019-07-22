@@ -4,5 +4,14 @@
 	<view class="chunk color3">3</view>
 </view>  -->
 
+<view class="container">
+	<view class="header">
+		<v-epsoide class="epsoide" index="{{classicData.index}}" />
+		<v-like class="like" bind:like="onLike" like="{{classicData.like_status}}" count="{{classicData.fav_nums}}" />
+	</view>
 
-<v-like like="{{classicData.like_status}}" count="{{classicData.fav_nums}}" />
+	<v-movie img="{{classicData.image}}" content="{{classicData.content}}" />
+
+	<v-navi class="navi" title="{{classicData.title}}" first="{{first}}" latest="{{latest}}" bind:left="onNext" bind:right="onPrevious" />
+
+</view>

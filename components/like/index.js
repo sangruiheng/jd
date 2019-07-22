@@ -29,11 +29,19 @@ Component({
       let like = this.properties.like
       let count = this.properties.count
       count = like ? count - 1 : count + 1
-      console.log(count)
+      // console.log(count)
       this.setData({
         count: count,
         like: !like
       })
+
+      //激活自定义事件
+      let behavior = this.properties.like ? 'like' : 'cancel'
+      //参数1 事件名 参数2 数据
+      this.triggerEvent('like',{
+        behavior:behavior
+      },{})
+
     }
   }
 })
