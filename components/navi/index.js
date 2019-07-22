@@ -27,14 +27,14 @@ Component({
     onLeft: function (event) {
       //触发自定义事件 传递到page页面
       if (!this.properties.latest) {  //当前期刊为最新一期时 不触发
-        this.triggerEvent('right', {}, {});
+        this.triggerEvent('left', {}, {});
 
       }
     },
 
-    onRigh: function (event) {
+    onRight: function (event) {
       if (!this.properties.first) {
-        this.triggerEvent('left', {}, {});
+        this.triggerEvent('right', {}, {});
       }
     }
 

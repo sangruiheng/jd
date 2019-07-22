@@ -15,8 +15,8 @@ Page({
    */
   data: {
     classicData: null,
-    first:false,
-    latest:true,
+    first: false,
+    latest: true,
   },
 
   /**
@@ -42,14 +42,28 @@ Page({
   },
 
   //下一期
-  onNext:function(event){
-
+  onNext: function (event) {
+    this._updateClassic('next')
   },
 
   //上一期
-  onPrevious:function(event){
-
+  onPrevious: function (event) {
+    this._updateClassic('previous')
   },
+
+
+  _updateClassic:function(nextOrPrevious){
+    let index = this.data.classicData.index
+    classicModel.getClassic(index,nextOrPrevious, (res) => {
+      this.setData({
+        classicData: res,
+        first:classicModel.isFirst(res.index),
+        latest:classicModel.isLatest(res.index)
+      })
+    })
+  },
+
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成
