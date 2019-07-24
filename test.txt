@@ -94,3 +94,7 @@ ctrl + shift + i  vscode格式化
 
       组件的代码复用 通过behavior实现
       behavior多继承 子Component下的会覆盖behavior的  生命周期函数不会覆盖 会以此执行
+
+      方法提取可以参照classic.js中的上一期下一期
+
+      加入缓存 （先在缓存中查找是否存在 不存在再去api请求 然后加入缓存）

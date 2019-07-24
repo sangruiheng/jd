@@ -35,7 +35,6 @@ Page({
 
   //喜欢
   onLike: function (event) {
-    console.log(event)
     let behavior = event.detail.behavior
     likeModel.like(behavior, this.data.classicData.id, this.data.classicData.type);
 
@@ -54,6 +53,7 @@ Page({
 
   _updateClassic:function(nextOrPrevious){
     let index = this.data.classicData.index
+    console.log(index)
     classicModel.getClassic(index,nextOrPrevious, (res) => {
       this.setData({
         classicData: res,
