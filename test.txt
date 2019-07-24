@@ -92,8 +92,10 @@ ctrl + shift + i  vscode格式化
 
       flex 如果你认为一个元素是100%  那么就给宽度或者高度100%
 
-      组件的代码复用 通过behavior实现
+      组件的js代码复用 通过behavior实现
       behavior多继承 子Component下的会覆盖behavior的  生命周期函数不会覆盖 会以此执行
+
+      组件的wxss复用 用templte模板
 
       方法提取可以参照classic.js中的上一期下一期
 
