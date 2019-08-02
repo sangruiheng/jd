@@ -2,24 +2,48 @@ import {
     HTTP
 } from '../utils/http-p.js'
 
-class BookModel extends HTTP{
+class BookModel extends HTTP {
 
 
     //获取书籍列表
-    getHotList(){
+    getHotList() {
         return this.request({
-            url:'book/hot_list'
+            url: 'book/hot_list'
         })
     }
 
     //获取喜欢书籍
-    getMyBookCount(){
+    getMyBookCount() {
         return this.request({
-            url :'book/favor/count'
+            url: 'book/favor/count'
         })
+    }
+
+
+    //获取书籍详情
+    getDetail(bid) {
+        return this.request({
+            url: `book/${bid}/detail`
+        });
+    }
+
+    //获取当前书籍的点赞状态
+    getLikeStatus(bid) {
+        return this.request({
+            url: `book/${bid}/favor`
+        });
+    }
+
+    //获取当前数据的短评信息
+    getComments(bid) {
+        return this.request({
+            url: `book/${bid}/short_comment`
+        });
     }
 
 
 }
 
-export {BookModel}
+export {
+    BookModel
+}

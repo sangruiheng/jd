@@ -108,3 +108,5 @@ ctrl + shift + i  vscode格式化
       
       纯粹callback 回调地狱 剥夺了函数的return
       promise 代码风格(不需要层层传递callback) 多个异步等待合并
+
+      小程序跳转 navigateTo
