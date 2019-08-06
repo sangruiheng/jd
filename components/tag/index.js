@@ -5,7 +5,7 @@ Component({
    */
 
  options:{
-  // multipleSlots:true
+  multipleSlots:true  //启用slot
  },
 
 //  externalClasses:['tag-class'],

@@ -110,3 +110,7 @@ ctrl + shift + i  vscode格式化
       promise 代码风格(不需要层层传递callback) 多个异步等待合并
 
       小程序跳转 navigateTo
+
+      组件的插槽 slot  原理（从外部传递小程序的标签） multipleSlots:true  //启用slot
+
+      wxs 可以在wxml中调用或编写的js  后缀名为wxs
