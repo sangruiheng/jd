@@ -51,7 +51,7 @@
 			"current": 0,
 			"list": [
 				{
-					"id": -1,
+					"id": 0,
 					"name": "book-detail",
 					"pathName": "pages/book-detail/book-detail",
 					"query": "bid=7",

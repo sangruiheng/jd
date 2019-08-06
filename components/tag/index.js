@@ -8,7 +8,7 @@ Component({
   multipleSlots:true  //启用slot
  },
 
-//  externalClasses:['tag-class'],
+ externalClasses:['tag-class'],
 
   properties: {
     text:String
