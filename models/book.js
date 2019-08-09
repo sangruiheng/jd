@@ -41,6 +41,18 @@ class BookModel extends HTTP {
         });
     }
 
+    //提交书籍评论
+    postComment(bid, comment) {
+        return this.request({
+            url: 'book/add/short_comment',
+            method: 'POST',
+            data: {
+                'bid': bid,
+                'comment': comment
+            }
+        })
+    }
+
 
 }
 

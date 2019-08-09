@@ -1,6 +1,10 @@
 import {BookModel} from '../../models/book.js'
 
-let bookModel = new BookModel();
+import {LikeModel} from '../../models/like.js'
+
+let bookModel = new BookModel()
+
+let likeModel = new LikeModel()
 
 Page({
 
@@ -11,7 +15,8 @@ Page({
     comments: [],
     book: null,
     likeStatus: false,
-    likeCount: 0
+    likeCount: 0,
+    posting:false
   },
 
   /**
@@ -44,6 +49,57 @@ Page({
         likeCount: res.fav_nums
       });
     });
+  },
+
+  onLike(event){
+    let like_or_cancel = event.detail.behavior
+    likeModel.like(like_or_cancel,this.data.book.id,400)
+  },
+
+  onFakePost(evnet){
+    this.setData({
+      posting:true
+    })
+  },
+
+  onCancel(event){
+    this.setData({
+      posting:false
+    })
+  },
+
+  onPost(event){
+    let comment = event.detail.text
+
+    if(comment.length > 12){
+        wx.showToast({
+          title:'短评最多12个字',
+          icon:'none'
+        })
+    }
+
+    bookModel.postComment(this.data.book.id, comment)
+    .then(res => {
+      wx.showToast({
+        title:'+1',
+        icon:'none'
+      })
+    })
+
+    //将点击的评论 加到上面的数组中
+    this.data.comments.unshift({
+      comment:comment,
+      nums:1
+    })
+
+    //更新数组
+    this.setData({
+      comments:this.data.comments
+    })
+
+
+
+
   },
 
   /**
