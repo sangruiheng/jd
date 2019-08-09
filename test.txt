@@ -116,3 +116,9 @@ ctrl + shift + i  vscode格式化
       组件的自定义样式  externalClasses:['tag-class'], (从外部传递样式wxss)
 
       wxs 可以在wxml中调用或编写的js  后缀名为wxs (类似于js函数可以在页面调用)  可以编写过滤器 
+
+      bindconfirm 监听用户完成按钮
+      bindtap 点击事件
+
+      三个Promise同时回调  用Promise.all()
+      

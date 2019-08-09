@@ -28,27 +28,40 @@ Page({
     let comments = bookModel.getComments(bid);
     let likeStatus = bookModel.getLikeStatus(bid);
 
-    detail.then((res) => {
-      console.log(res);
-      this.setData({
-        book: res
-      });
-    });
 
-    comments.then((res) => {
-      console.log(res);
+    Promise.all([detail,comments,likeStatus])
+    .then(res=>{
+      console.log(res)
       this.setData({
-        comments: res.comments
-      });
-    });
+        book:res[0],
+        comments:res[1].comments,
+        likeStatus:res[1].like_status,
+        likeCount:res[2].fav_nums
+      })
+    })
 
-    likeStatus.then((res) => {
-      console.log(res);
-      this.setData({
-        likeStatus: res.like_status,
-        likeCount: res.fav_nums
-      });
-    });
+
+    // detail.then((res) => {
+    //   console.log(res);
+    //   this.setData({
+    //     book: res
+    //   });
+    // });
+
+    // comments.then((res) => {
+    //   console.log(res);
+    //   this.setData({
+    //     comments: res.comments
+    //   });
+    // });
+
+    // likeStatus.then((res) => {
+    //   console.log(res);
+    //   this.setData({
+    //     likeStatus: res.like_status,
+    //     likeCount: res.fav_nums
+    //   });
+    // });
   },
 
   onLike(event){
@@ -69,7 +82,11 @@ Page({
   },
 
   onPost(event){
-    let comment = event.detail.text
+    let comment = event.detail.text || event.detail.value
+
+    if(!comment){
+      return
+    }
 
     if(comment.length > 12){
         wx.showToast({
@@ -88,13 +105,14 @@ Page({
 
     //将点击的评论 加到上面的数组中
     this.data.comments.unshift({
-      comment:comment,
+      content:comment,
       nums:1
     })
 
     //更新数组
     this.setData({
-      comments:this.data.comments
+      comments:this.data.comments,
+      posting:false
     })
 
 
